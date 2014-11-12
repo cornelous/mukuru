@@ -138,15 +138,16 @@ class Controller_User_Account extends Controller_Application {
             $verify = new Model_User;
             $verified = $verify->verifytoken($token);
 
-            var_dump($verified);
-            //get username from model
-            $session = Session::instance();
-            //$session->set('username', $username]);
+            if ($verified) {
+                foreach ($verified as $verifieduser) {
+                    $session = Session::instance();
+                    $session->set('username', $verifieduser['username']);
+                }
+            }
 
             //redirect to user profile i.e login as user
-            //$this->request->redirect('user_profile/index/');
+            $this->request->redirect('user_profile/index/');
         }
-
     }
 
 
