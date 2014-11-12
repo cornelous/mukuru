@@ -92,7 +92,8 @@ class Controller_User_Account extends Controller_Application {
             $user = new Model_User;
             $newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $image, $verified, 0);
 
-            $baseurl = URL::base();
+            //$baseurl = URL::base();
+            $baseurl = 'http://cornelo.us/index.php/';
             $verification = md5(uniqid(rand()));
             $verificationlink = $baseurl ."verify/".$verification;
             $msgheading =  'Email Verification';
