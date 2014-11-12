@@ -27,6 +27,7 @@ body {
     list-style: disc;
     font-size:0.8em;
     color: red;
+    padding-left:10px;
 }
 
 #content {
