@@ -1,7 +1,7 @@
 <?php if ($errors) : ?>
 
     <table border=10 bordercolor=RED>
-        <tr> <td><?php var_dump($errors); ?> </tr>
+        <tr> <td><?php var_dump($errors); ?></td> </tr>
     </table>
 
 <?php endif; ?>
