@@ -16,9 +16,11 @@
             <?php echo Form::input('username'); ?>
         </td>
         <td>
-            <?php foreach ($errors as $key => $value): ?>
-                <?php if ($key == 'username') echo "USERNAME error"; ?>
-            <?php endforeach; ?>
+            <?php if ($errors): ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <?php if ($key == 'username') echo "USERNAME error"; ?>
+                <?php endforeach; ?>
+            <?php endif ?>
         </td>
     </tr>
     <tr>
@@ -27,20 +29,26 @@
             <?php echo Form::input('email'); ?>
         </td>
         <td>
-            <?php foreach ($errors as $key => $value): ?>
-                <?php if ($key == 'email') echo "EMAIL error"; ?>
-            <?php endforeach; ?>
+            <?php if ($errors): ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <?php if ($key == 'email') echo "EMAIL error"; ?>
+                <?php endforeach; ?>
+            <?php endif ?>
         </td>
     </tr>
     <tr>
         <td>
-            <?php echo Form::label('password', 'Password')?>:<br>
-            <?php echo Form::password('password'); ?>
+            <?php if ($errors): ?>
+                <?php echo Form::label('password', 'Password')?>:<br>
+                <?php echo Form::password('password'); ?>
+            <?php endif ?>
         </td>
         <td>
-            <?php foreach ($errors as $key => $value): ?>
-                <?php if ($key == 'password') echo "Password error"; ?>
-            <?php endforeach; ?>
+            <?php if ($errors): ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <?php if ($key == 'password') echo "Password error"; ?>
+                <?php endforeach; ?>
+            <?php endif ?>
         </td>
     </tr>
     <tr>
@@ -55,9 +63,11 @@
             <?php echo Form::input('namesurname'); ?>
         </td>
         <td>
-            <?php foreach ($errors as $key => $value): ?>
-                <?php if ($key == 'namesurname') echo "FULL NAME error"; ?>
-            <?php endforeach; ?>
+            <?php if ($errors): ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <?php if ($key == 'namesurname') echo "FULL NAME error"; ?>
+                <?php endforeach; ?>
+            <?php endif ?>
         </td>
     </tr>
     <tr>
@@ -66,9 +76,11 @@
             <?php echo Form::input('address'); ?>
         </td>
         <td>
-            <?php foreach ($errors as $key => $value): ?>
-                <?php if ($key == 'address') echo "ADDRESS error"; ?>
-            <?php endforeach; ?>
+            <?php if ($errors): ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <?php if ($key == 'address') echo "ADDRESS error"; ?>
+                <?php endforeach; ?>
+            <?php endif ?>
         </td>
     </tr>
     <tr>
@@ -77,9 +89,11 @@
             <?php echo Form::input('city'); ?>
         </td>
         <td>
-            <?php foreach ($errors as $key => $value): ?>
-                <?php if ($key == 'city') echo "CITY error"; ?>
-            <?php endforeach; ?>
+            <?php if ($errors): ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <?php if ($key == 'city') echo "CITY error"; ?>
+                <?php endforeach; ?>
+            <?php endif ?>
         </td>
     </tr>
     <tr>
@@ -88,9 +102,11 @@
             <?php echo Form::input('country'); ?>
         </td>
         <td>
-            <?php foreach ($errors as $key => $value): ?>
-                <?php if ($key == 'country') echo "COUNTRY error"; ?>
-            <?php endforeach; ?>
+            <?php if ($errors): ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <?php if ($key == 'country') echo "COUNTRY error"; ?>
+                <?php endforeach; ?>
+            <?php endif ?>
         </td>
     </tr>
     <tr>
@@ -99,9 +115,11 @@
             <?php echo Form::input('phonenumber'); ?>
         </td>
         <td>
-            <?php foreach ($errors as $key => $value): ?>
-                <?php if ($key == 'phonenumber') echo "PHONE NUMBER error"; ?>
-            <?php endforeach; ?>
+            <?php if ($errors): ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <?php if ($key == 'phonenumber') echo "PHONE NUMBER error"; ?>
+                <?php endforeach; ?>
+            <?php endif ?>
         </td>
     </tr>
     <tr>
