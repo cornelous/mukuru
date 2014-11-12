@@ -97,7 +97,8 @@ class Controller_User_Account extends Controller_Application {
             $verificationlink = $baseurl ."verify/".$verification;
             $msgheading =  'Email Verification';
             $msgbody1 = 'thank you for signing up.';
-            $msgbody2 = "Please verify your email address by clicking the link below:-<br><a href="{$verificationlink}" target="_blank">Please verifiy your email</a>";
+            $msgbody2 = 'Please verify your email address by clicking the link below:-<br><a href=' .$verificationlink . '">';
+
 
             $mailsent = $this->emailer($email,$namesurname,$msgheading,$msgbody1, $msgbody2 );
             if ($mailsent) {
