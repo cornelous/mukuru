@@ -23,6 +23,10 @@ body {
     margin: 12px;
 }
 
+#errors{
+    border:1px solid red;
+}
+
 #content {
     padding:10px;
     padding-bottom:40px; /* Height of the footer element */
