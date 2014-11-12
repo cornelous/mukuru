@@ -119,7 +119,7 @@ Route::set('reset', 'reset')
         'action'     => 'reset',
     ));
 
-Route::set('reset', 'verify')
+Route::set('verify', 'verify')
     ->defaults(array(
         'directory' => 'user',
         'controller' => 'account',
