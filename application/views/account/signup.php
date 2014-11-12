@@ -1,15 +1,3 @@
-<?php if ($errors): ?>
-    <h2 class="error">There were form errors.</h2>
-    <ul class="errors">
-        <?php foreach ($errors as $key => $value): ?>
-            <li><?php
-                       echo "${$key}flag = $key";
-                ?></li>
-        <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
-
-
 <table id="signup">
     <tr>
         <th>Sign Up</th>
@@ -23,9 +11,12 @@
         </td>
         <td>
             <table id="errors">
-                <?php if ($errors) : ?>
-                    <tr> <td><?php var_dump($errors); ?></td> </tr>
-                <?php endif; ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <tr> <td>
+                            <?php if ($key == 'username') echo "USERNAME error"; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </table>
         </td>
     </tr>
