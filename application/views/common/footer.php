@@ -1,0 +1,1 @@
+<p> &copy; Mukuru  <?php echo date("Y");?> , all rights reserved - <?php echo $site_name; ?></p>
