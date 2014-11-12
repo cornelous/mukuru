@@ -18,7 +18,9 @@
         <td>
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
-                    <?php if ($key == 'username') echo "USERNAME error"; ?>
+                    <?php if ($key == 'username'): ?>
+                        <li class="errors"><?php echo 'Username can not be blank.';?></li>
+                    <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
         </td>
@@ -31,7 +33,10 @@
         <td>
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
-                    <?php if ($key == 'email') echo "EMAIL error"; ?>
+                    <?php if ($key == 'email'): ?>
+                        <li class="errors"><?php echo 'Email can not be blank.';?></li>
+                        <li class="errors"><?php echo 'Email should be a valid email address.';?></li>
+                    <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
         </td>
@@ -45,8 +50,8 @@
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
                     <?php if ($key == 'password'): ?>
-                        <li class="errors"><?php echo 'Password can not be blank';?></li>
-                        <li class="errors"><?php echo 'Password can should be at least 6 characters';?></li>
+                        <li class="errors"><?php echo 'Password can not be blank.';?></li>
+                        <li class="errors"><?php echo 'Password should be at least 6 characters.';?></li>
                     <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
@@ -66,7 +71,9 @@
         <td>
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
-                    <?php if ($key == 'namesurname') echo "FULL NAME error"; ?>
+                    <?php if ($key == 'namesurname'): ?>
+                        <li class="errors"><?php echo 'Full name can not be blank.';?></li>
+                    <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
         </td>
@@ -79,7 +86,9 @@
         <td>
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
-                    <?php if ($key == 'address') echo "ADDRESS error"; ?>
+                    <?php if ($key == 'address'): ?>
+                        <li class="errors"><?php echo 'Address can not be blank.';?></li>
+                    <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
         </td>
@@ -92,7 +101,9 @@
         <td>
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
-                    <?php if ($key == 'city') echo "CITY error"; ?>
+                    <?php if ($key == 'city'): ?>
+                        <li class="errors"><?php echo 'City can not be blank.';?></li>
+                    <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
         </td>
@@ -105,7 +116,9 @@
         <td>
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
-                    <?php if ($key == 'country') echo "COUNTRY error"; ?>
+                    <?php if ($key == 'country'): ?>
+                        <li class="errors"><?php echo 'Country can not be blank.';?></li>
+                    <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
         </td>
@@ -118,7 +131,9 @@
         <td>
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
-                    <?php if ($key == 'phonenumber') echo "PHONE NUMBER error"; ?>
+                    <?php if ($key == 'phonenumber'): ?>
+                        <li class="errors"><?php echo 'Phone number can not be blank.';?></li>
+                    <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
         </td>
