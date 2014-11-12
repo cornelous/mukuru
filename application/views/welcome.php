@@ -6,6 +6,7 @@
         <th>City</th>
         <th>Country</th>
         <th>Email</th>
+        <th>Phonenumber</th>
         <th>Password</th>
         <th>Active</th>
         <th>Verified</th>
