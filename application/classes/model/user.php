@@ -64,6 +64,11 @@ class Model_User {
 
     }
 
+    public function verify($confimation)
+    {
+
+    }
+
     /**
     * Updates the active flag of a user to 0
     *

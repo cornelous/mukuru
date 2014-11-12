@@ -92,10 +92,10 @@ class Controller_User_Account extends Controller_Application {
             $user = new Model_User;
             $newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $image, $verified, 0);
 
-
+            $verification = md5(uniqid(rand()));
             $msgheading =  'Email Verification';
             $msgbody1 = 'thank you for signing up.';
-            $msgbody2 = 'Please verify your email address by clicking the link below:-';
+            $msgbody2 = "Please verify your email address by clicking the link below:-<br>{$verification}";
 
             $mailsent = $this->emailer($email,$namesurname,$msgheading,$msgbody1, $msgbody2 );
             if ($mailsent) {
