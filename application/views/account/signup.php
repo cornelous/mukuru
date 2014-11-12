@@ -1,9 +1,5 @@
 <?php if ($errors) : ?>
-<ul class="error">
-    <?php foreach ($errors as $error) : ?>
-        <li><?php echo $error; ?></li>
-    <?php endforeach; ?>
-</ul>
+<?php var_dump($errors); ?>
 <?php endif; ?>
 
 <table id="login">

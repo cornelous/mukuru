@@ -84,7 +84,7 @@ class Controller_User_Account extends Controller_Application {
 //                'max_length' => 50
 //            ));
 
-         
+
             if ($post->check())
             {
                     $username = $_POST['username'];
