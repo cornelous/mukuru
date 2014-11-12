@@ -131,7 +131,7 @@ class Controller_User_Account extends Controller_Application {
         }
     }
 
-    public function verify()
+    public function action_verify()
     {
         if ($_GET){
             $token = $_GET['v'];
