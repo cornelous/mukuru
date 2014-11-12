@@ -7,6 +7,7 @@ class Controller_Welcome extends Controller_Application {
 	    $session = Session::instance();
         $username = $session->get('username');
 
+        //protecting my controllers --- to make a helper class later
         if (!isset($username))
         {
           $this->request->redirect('login');
@@ -26,7 +27,6 @@ class Controller_Welcome extends Controller_Application {
             'items_per_page' => 3,
         ));
         $pager_links = $pagination->render();
-
 
         $users = $user->get_all($pagination->items_per_page,
             $pagination->offset);
