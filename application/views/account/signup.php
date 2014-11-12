@@ -2,7 +2,9 @@
     <h2 class="error">There were form errors.</h2>
     <ul class="errors">
         <?php foreach ($errors as $key => $value): ?>
-            <li><?php echo $key ?></li>
+            <li><?php
+                       echo "'$'.{$key}.'flag'";
+                ?></li>
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
