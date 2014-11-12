@@ -1,8 +1,8 @@
 <?php if ($errors): ?>
     <h2 class="error">There were form errors.</h2>
     <ul class="errors">
-        <?php foreach ($errors as $error): ?>
-            <li><?php echo $error[0] ?></li>
+        <?php foreach ($errors as $key => $value): ?>
+            <li><?php echo $key ?></li>
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
