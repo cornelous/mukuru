@@ -2,7 +2,7 @@
     <h2 class="error">There were form errors.</h2>
     <ul class="errors">
         <?php foreach ($errors as $error): ?>
-            <li><?php echo $error[] ?></li>
+            <li><?php echo $error[1] ?></li>
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
