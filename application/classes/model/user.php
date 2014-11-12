@@ -66,12 +66,20 @@ class Model_User {
 
     public function verifytoken($token)
     {
-        return DB::update($this->_table)->set(array(
+        $verifieduser = DB::select('*')
+        ->from($this->_table)
+        ->where('verified', '=', $token)
+        ->execute()
+        ->as_array();
+
+        $verified = DB::update($this->_table)->set(array(
             'verified' =>1,
             'active' => 1
         ))
         ->where('verified', '=', $token)
         ->execute();
+
+        return $verifieduser;
     }
 
 
