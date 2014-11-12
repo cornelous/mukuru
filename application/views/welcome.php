@@ -21,6 +21,7 @@
         <td><?php echo $user['city']; ?></td>
         <td><?php echo $user['country']; ?></td>
         <td><?php echo $user['email']; ?></td>
+        <td><?php echo $user['phonenumber']; ?></td>
         <td><?php echo $user['password']; ?></td>
         <td><?php echo ($user['active'] == 1? 'ACTIVE': 'DISABLED'); ?></td>
         <td><?php echo ($user['verified'] == 1? 'VERIFIED': 'NOT VERIFIED'); ?></td>
@@ -34,6 +35,7 @@
             <td><?php echo $user['city']; ?></td>
             <td><?php echo $user['country']; ?></td>
             <td><?php echo $user['email']; ?></td>
+            <td><?php echo $user['phonenumber']; ?></td>
             <td><?php echo $user['password']; ?></td>
             <td><?php echo ($user['active'] == 1? 'ACTIVE': 'DISABLED'); ?></td>
             <td><?php echo ($user['verified'] == 1? 'VERIFIED': 'NOT VERIFIED'); ?></td>

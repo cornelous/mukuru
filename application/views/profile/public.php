@@ -24,6 +24,10 @@
         <td>Country</td>
         <td><?php echo $user['country']?></td>
     </tr>
+    <tr>
+        <td>Phone Number</td>
+        <td><?php echo $user['phonenumber']?></td>
+    </tr>
     <tr class="alt">
         <td>Email</td>
         <td><?php echo $user['email']?></td>

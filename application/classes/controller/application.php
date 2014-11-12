@@ -5,7 +5,7 @@ abstract class Controller_Application extends Controller_Template {
     public function before()
     {
         parent::before();
-        
+
         //Global variables
         View::set_global('site_name', 'Mukuru Assignment');
 
