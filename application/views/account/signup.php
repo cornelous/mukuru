@@ -38,10 +38,8 @@
     </tr>
     <tr>
         <td>
-            <?php if ($errors): ?>
-                <?php echo Form::label('password', 'Password')?>:<br>
-                <?php echo Form::password('password'); ?>
-            <?php endif ?>
+            <?php echo Form::label('password', 'Password')?>:<br>
+            <?php echo Form::password('password'); ?>
         </td>
         <td>
             <?php if ($errors): ?>
