@@ -4,7 +4,7 @@
     <?php endif; ?>
 </table>
 
-<table id="login">
+<table id="signup">
     <tr>
         <th>Sign Up</th>
         <th></th>
