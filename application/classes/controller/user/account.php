@@ -73,38 +73,51 @@ class Controller_User_Account extends Controller_Application {
 
     public function action_signup()
     {
-        $view= View::factory('account/signup');
-        $this->template->view = $view;
 
         if ($_POST)
         {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $namesurname = $_POST['namesurname'];
-            $address = $_POST['address'];
-            $city = $_POST['city'];
-            $country = $_POST['country'];
-            $email = $_POST['email'];
-            $phonenumber = $_POST['phonenumber'];
-            $image = $_POST['image'];
-            $verification = md5(uniqid(rand()));
 
-            $user = new Model_User;
-            $newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $image, $verification, 0);
+            $post = new Validate($_POST);
+            $post ->rule('username', 'not_empty');
+            $post ->rules('password', array(
+                'not_empty' => NULL,
+                'max_length' => 50
+            ));
 
-            //$baseurl = URL::base();
-            $baseurl = 'http://cornelo.us/index.php/';
-            $verificationlink = $baseurl ."verify?v=".$verification;
-            $msgheading =  'Email Verification';
-            $msgbody1 = 'thank you for signing up.';
-            $msgbody2 = 'Please verify your email address by clicking the link below:-<br><a href="' .$verificationlink . '">Please verifiy your email</a>';
+            if ($post->check())
+            {
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $namesurname = $_POST['namesurname'];
+                    $address = $_POST['address'];
+                    $city = $_POST['city'];
+                    $country = $_POST['country'];
+                    $email = $_POST['email'];
+                    $phonenumber = $_POST['phonenumber'];
+                    $image = $_POST['image'];
+                    $verification = md5(uniqid(rand()));
+
+                    $user = new Model_User;
+                    $newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $image, $verification, 0);
+
+                    //$baseurl = URL::base();
+                    $baseurl = 'http://cornelo.us/index.php/';
+                    $verificationlink = $baseurl ."verify?v=".$verification;
+                    $msgheading =  'Email Verification';
+                    $msgbody1 = 'thank you for signing up.';
+                    $msgbody2 = 'Please verify your email address by clicking the link below:-<br><a href="' .$verificationlink . '">Please verifiy your email</a>';
 
 
-            $mailsent = $this->emailer($email,$namesurname,$msgheading,$msgbody1, $msgbody2 );
-            if ($mailsent) {
-                var_dump($baseurl);
+                    $mailsent = $this->emailer($email,$namesurname,$msgheading,$msgbody1, $msgbody2 );
+                    if ($mailsent) {
+                        var_dump($baseurl);
+                    }
             }
 
+            $errors = $post->errors();
+            $this->template->view  = View::factory('account/login')
+                ->bind('user', $user)
+                ->bind('errors', $errors);
 
         }
     }

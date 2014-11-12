@@ -1,3 +1,11 @@
+<?php if ($errors) : ?>
+<ul class="error">
+    <?php foreach ($errors as $error) : ?>
+        <li><?php echo $error; ?></li>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
 <table id="login">
     <tr>
         <th>Sign Up</th>
