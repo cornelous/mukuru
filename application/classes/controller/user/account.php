@@ -115,7 +115,7 @@ class Controller_User_Account extends Controller_Application {
             }
             $errors = $post->errors();
         }
-        $this->template->view  = View::factory('account/login')
+        $this->template->view  = View::factory('account/signup')
             ->bind('user', $user)
             ->bind('errors', $errors);
     }
