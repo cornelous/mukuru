@@ -76,9 +76,16 @@ class Controller_User_Account extends Controller_Application {
 
         if ($_POST)
         {
-
             $post = new Validate($_POST);
             $post ->rule('username', 'not_empty');
+            $post ->rule('email', 'not_empty');
+            $post ->rule('password', 'not_empty');
+            $post ->rule('namesurname', 'not_empty');
+            $post ->rule('address', 'not_empty');
+            $post ->rule('city', 'not_empty');
+            $post ->rule('country', 'not_empty');
+            $post ->rule('phonenumber', 'not_empty');
+
 //            $post ->rules('password', array(
 //                'not_empty' => NULL,
 //                'max_length' => 50
