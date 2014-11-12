@@ -1,3 +1,4 @@
+<div>
 <table id="errors">
     <?php if ($errors) : ?>
             <tr> <td><?php var_dump($errors); ?></td> </tr>
@@ -77,4 +78,5 @@
     </tr>
     <?php echo Form::close(); ?>
 </table>
+</div>
 
