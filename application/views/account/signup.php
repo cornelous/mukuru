@@ -45,8 +45,8 @@
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
                     <?php if ($key == 'password'): ?>
-                        <li><?php echo 'Password can not be blank';?></li>
-                        <li><?php echo 'Password can should be at least 6 characters';?></li>
+                        <li class="errors"><?php echo 'Password can not be blank';?></li>
+                        <li class="errors><?php echo 'Password can should be at least 6 characters';?></li>
                     <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>

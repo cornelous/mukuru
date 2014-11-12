@@ -23,11 +23,10 @@ body {
     margin: 12px;
 }
 
-#errors{
-    border:2px solid red;
-    width: 400px;
-    margin-top: 100px;
-    float:left;
+.errors{
+    list-style: disc;
+    font-size:0.4em;
+    color: red;
 }
 
 #content {
@@ -61,9 +60,9 @@ body {
     position: fixed; /* or absolute */
     /*top: 50%;
     left: 50%; */
-    width: 400px;
+    width: 800px;
     margin-top: 100px;
-    margin-left: 200px;
+    margin-left: 300px;
 
 }
 
