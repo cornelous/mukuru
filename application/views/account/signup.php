@@ -9,21 +9,16 @@
             <?php echo Form::label('image', 'Image')?>:<br>
             <?php echo Form::input('image'); ?>
         </td>
-        <td>
-            <table id="errors">
-                <?php foreach ($errors as $key => $value): ?>
-                    <tr> <td>
-                            <?php if ($key == 'username') echo "USERNAME error"; ?>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-        </td>
     </tr>
     <tr>
         <td>
             <?php echo Form::label('username', 'Username')?>:<br>
             <?php echo Form::input('username'); ?>
+        </td>
+        <td>
+            <?php foreach ($errors as $key => $value): ?>
+                <?php if ($key == 'username') echo "USERNAME error"; ?>
+            <?php endforeach; ?>
         </td>
     </tr>
     <tr>
@@ -31,11 +26,21 @@
             <?php echo Form::label('email', 'Email Address')?>:<br>
             <?php echo Form::input('email'); ?>
         </td>
+        <td>
+            <?php foreach ($errors as $key => $value): ?>
+                <?php if ($key == 'email') echo "EMAIL error"; ?>
+            <?php endforeach; ?>
+        </td>
     </tr>
     <tr>
         <td>
             <?php echo Form::label('password', 'Password')?>:<br>
             <?php echo Form::password('password'); ?>
+        </td>
+        <td>
+            <?php foreach ($errors as $key => $value): ?>
+                <?php if ($key == 'password') echo "Password error"; ?>
+            <?php endforeach; ?>
         </td>
     </tr>
     <tr>
@@ -49,11 +54,21 @@
             <?php echo Form::label('namesurname', 'Full name')?>:<br>
             <?php echo Form::input('namesurname'); ?>
         </td>
+        <td>
+            <?php foreach ($errors as $key => $value): ?>
+                <?php if ($key == 'namesurname') echo "FULL NAME error"; ?>
+            <?php endforeach; ?>
+        </td>
     </tr>
     <tr>
         <td>
             <?php echo Form::label('address', 'Address')?>:<br>
             <?php echo Form::input('address'); ?>
+        </td>
+        <td>
+            <?php foreach ($errors as $key => $value): ?>
+                <?php if ($key == 'address') echo "ADDRESS error"; ?>
+            <?php endforeach; ?>
         </td>
     </tr>
     <tr>
@@ -61,17 +76,32 @@
             <?php echo Form::label('city', 'City')?>:<br>
             <?php echo Form::input('city'); ?>
         </td>
+        <td>
+            <?php foreach ($errors as $key => $value): ?>
+                <?php if ($key == 'city') echo "CITY error"; ?>
+            <?php endforeach; ?>
+        </td>
     </tr>
     <tr>
         <td>
             <?php echo Form::label('country', 'Country')?>:<br>
             <?php echo Form::input('country'); ?>
         </td>
+        <td>
+            <?php foreach ($errors as $key => $value): ?>
+                <?php if ($key == 'country') echo "COUNTRY error"; ?>
+            <?php endforeach; ?>
+        </td>
     </tr>
     <tr>
         <td>
             <?php echo Form::label('phonenumber', 'Phone number')?>:<br>
             <?php echo Form::input('phonenumber'); ?>
+        </td>
+        <td>
+            <?php foreach ($errors as $key => $value): ?>
+                <?php if ($key == 'phonenumber') echo "PHONE NUMBER error"; ?>
+            <?php endforeach; ?>
         </td>
     </tr>
     <tr>
