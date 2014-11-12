@@ -113,13 +113,11 @@ class Controller_User_Account extends Controller_Application {
                         var_dump($baseurl);
                     }
             }
-
             $errors = $post->errors();
-            $this->template->view  = View::factory('account/login')
-                ->bind('user', $user)
-                ->bind('errors', $errors);
-
         }
+        $this->template->view  = View::factory('account/login')
+            ->bind('user', $user)
+            ->bind('errors', $errors);
     }
 
     public function action_reset()
