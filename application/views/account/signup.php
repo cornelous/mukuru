@@ -1,10 +1,3 @@
-<div>
-<table id="errors">
-    <?php if ($errors) : ?>
-            <tr> <td><?php var_dump($errors); ?></td> </tr>
-    <?php endif; ?>
-</table>
-
 <table id="signup">
     <tr>
         <th>Sign Up</th>
@@ -15,6 +8,13 @@
         <td>
             <?php echo Form::label('image', 'Image')?>:<br>
             <?php echo Form::input('image'); ?>
+        </td>
+        <td>
+            <table id="errors">
+                <?php if ($errors) : ?>
+                    <tr> <td><?php var_dump($errors); ?></td> </tr>
+                <?php endif; ?>
+            </table>
         </td>
     </tr>
     <tr>
@@ -78,5 +78,4 @@
     </tr>
     <?php echo Form::close(); ?>
 </table>
-</div>
 
