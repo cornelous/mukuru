@@ -119,6 +119,13 @@ Route::set('reset', 'reset')
         'action'     => 'reset',
     ));
 
+Route::set('reset', 'verify')
+    ->defaults(array(
+        'directory' => 'user',
+        'controller' => 'account',
+        'action'     => 'verify',
+    ));
+
 
 Route::set('profile', 'profile/<id>(/<optional>)', array(
     'id' => '[0-9]+',
@@ -128,8 +135,6 @@ Route::set('profile', 'profile/<id>(/<optional>)', array(
         'controller' => 'profile',
         'action'     => 'index',
     ));
-
-
 
 
 Route::set('default', '(<controller>(/<action>(/<id>)))')
