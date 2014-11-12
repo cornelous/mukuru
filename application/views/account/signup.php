@@ -3,7 +3,7 @@
     <ul class="errors">
         <?php foreach ($errors as $key => $value): ?>
             <li><?php
-                       echo "'$'.{$key}.'flag'";
+                       echo "$.{$key}.flag";
                 ?></li>
         <?php endforeach; ?>
     </ul>
