@@ -11,7 +11,7 @@
         You are logged in as: <?php echo $user; ?>.  <?php echo HTML::anchor('logout', 'Logout'); ?>
 
     <?php else: ?>
-            <?php echo HTML::anchor('signup', 'Sign Up'); | echo HTML::anchor('login', 'Login');  |  echo HTML::anchor('reset', 'Reset password');?>
+            <?php echo HTML::anchor('signup', 'Sign Up');?> | <?php echo HTML::anchor('login', 'Login');?> | <?php  echo HTML::anchor('reset', 'Reset password');?>
     <?php endif; ?>
 
 </p>
