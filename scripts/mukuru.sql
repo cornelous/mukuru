@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 `email` varchar(127) NOT NULL,
 `phonenumber` char(50) NOT NULL,
 `image` char(120),
-`verified` int(11) UNSIGNED NOT NULL,
+`verified` varchar(255) NOT NULL,
 `active` int(11) UNSIGNED NOT NULL,
 PRIMARY KEY (`id`),
 UNIQUE KEY `uniq_username` (`username`),

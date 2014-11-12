@@ -94,7 +94,7 @@ class Controller_User_Account extends Controller_Application {
 
             //$baseurl = URL::base();
             $baseurl = 'http://cornelo.us/index.php/';
-            $verificationlink = $baseurl ."verify/".$verification;
+            $verificationlink = $baseurl ."verify?v=".$verification;
             $msgheading =  'Email Verification';
             $msgbody1 = 'thank you for signing up.';
             $msgbody2 = 'Please verify your email address by clicking the link below:-<br><a href="' .$verificationlink . '">Please verifiy your email</a>';
@@ -130,6 +130,25 @@ class Controller_User_Account extends Controller_Application {
             }
         }
     }
+
+    public function verify()
+    {
+        if ($_GET){
+            $token = $_GET['v'];
+            $verify = new Model_User;
+            $verified = $verify->verifytoken($token);
+
+            var_dump($verified);
+            //get username from model
+            $session = Session::instance();
+            //$session->set('username', $username]);
+
+            //redirect to user profile i.e login as user
+            //$this->request->redirect('user_profile/index/');
+        }
+
+    }
+
 
     public function action_noaccess()
     {

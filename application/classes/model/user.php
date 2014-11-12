@@ -64,10 +64,17 @@ class Model_User {
 
     }
 
-    public function verify($confimation)
+    public function verifytoken($token)
     {
-
+        return DB::update($this->_table)->set(array(
+            'verified' =>1,
+            'active' => 1
+        ))
+        ->where('verified', '=', $token)
+        ->execute();
     }
+
+
 
     /**
     * Updates the active flag of a user to 0
