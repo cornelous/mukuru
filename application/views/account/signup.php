@@ -1,5 +1,9 @@
 <?php if ($errors) : ?>
-<?php var_dump($errors); ?>
+
+    <table border=10 bordercolor=RED>
+        <tr> <td><?php var_dump($errors); ?> </tr>
+    </table>
+
 <?php endif; ?>
 
 <table id="login">
