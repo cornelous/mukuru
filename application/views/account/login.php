@@ -1,4 +1,3 @@
-<?php var_dump($referrer); ?>
 <table id="login">
     <tr>
         <th>Login</th>

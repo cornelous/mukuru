@@ -3,7 +3,6 @@
 </div>
 <div id="account">
   <p>
-
     <?php
     $session = Session::instance();
     $user = $session->get('username');
@@ -13,6 +12,5 @@
     <?php else: ?>
             <?php echo HTML::anchor('signup', 'Sign Up');?> | <?php echo HTML::anchor('login', 'Login');?> | <?php  echo HTML::anchor('reset', 'Reset password');?>
     <?php endif; ?>
-
 </p>
 </div>
