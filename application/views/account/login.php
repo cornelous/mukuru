@@ -4,11 +4,14 @@
         <th></th>
     </tr>
             <?php echo Form::open(); ?>
+            <?php if ($errors) : ?>
+            <tr>
+                <?php echo "You have supplied invalid logins" ?>
+            </tr>
+            <?php endif ?>
+
             <tr>
                 <td>
-                    <?php if ($errors) : ?>
-                        <?php echo "You have supplied invalid logins" ?>
-                    <?php endif ?>
                     <?php echo Form::label('username', 'Username')?>
                     <?php echo Form::input('username'); ?>
                 </td>
