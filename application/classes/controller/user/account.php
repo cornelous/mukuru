@@ -151,7 +151,7 @@ class Controller_User_Account extends Controller_Application {
             $mailsent = $this->emailer($email,'', $msgheading,'',$msgbody2);
 
             if ($mailsent){
-                echo "Password Reset!";
+                $this->request->redirect('msg');
             }
         }
     }
@@ -176,9 +176,10 @@ class Controller_User_Account extends Controller_Application {
     }
 
 
-    public function action_noaccess()
+    public function action_msg()
     {
-        $view = View::factory('account/noaccess');
+        $view= View::factory('account/msg');
+        $this->template->view = $view;
     }
 
 

@@ -12,7 +12,7 @@
             </tr>
             <tr>
                 <td>
-                    <?php echo Form::submit('submit', 'Send new password'); ?> user
+                    <?php echo Form::submit('submit', 'Send new password'); ?>
                 </td>
             </tr>
             <?php echo Form::close(); ?>
