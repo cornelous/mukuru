@@ -120,8 +120,7 @@
     <tr>
         <td>
             <?php echo Form::label('country', 'Country')?>:<br>
-            <?php echo Form::input('country', $country); ?>
-            <?php echo Form::select('country', array('1'=>'ANGOLA','2'=>'MALAWI','3'=>'SOUTH AFRICA', '4'=>'ZIMBABWE',)); ?>
+            <?php echo Form::select('country', array('0' =>'', '1'=>'ANGOLA','2'=>'MALAWI','3'=>'SOUTH AFRICA', '4'=>'ZIMBABWE',)); ?>
         </td>
         <td>
             <?php if ($errors): ?>
