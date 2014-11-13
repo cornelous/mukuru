@@ -77,7 +77,7 @@ class Controller_User_Account extends Controller_Application {
         if ($_POST)
         {
             $post = new Validate($_POST);
-           // $post ->rule('username', 'not_empty');
+            $post ->rule('username', 'not_empty');
             $post ->rule('email', 'not_empty');
             $post ->rule('email', 'email');
             $post ->rule('password', 'not_empty');

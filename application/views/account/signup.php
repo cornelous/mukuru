@@ -19,7 +19,7 @@
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
                     <?php if ($key == 'username'): ?>
-                        <li class="errors"><?php echo 'Username can not be blank.';?></li>
+                        <li class="errors"><?php echo 'If username is NOT blank then this username has already been taken. Please choose another one.';?></li>
                     <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
