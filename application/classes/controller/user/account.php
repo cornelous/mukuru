@@ -117,7 +117,7 @@ class Controller_User_Account extends Controller_Application {
 
                     $mailsent = $this->emailer($email,$namesurname,$msgheading,$msgbody1, $msgbody2 );
                     if ($mailsent) {
-                        var_dump($baseurl);
+                        $this->request->redirect('msg?msg=newsignup');
                     }
             }
             $errors = $post->errors();
