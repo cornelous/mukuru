@@ -83,6 +83,16 @@ class Model_User {
     }
 
 
+    public static function unique_username($username)
+    {
+        // Check if the username already exists in the database
+        return ! DB::select(array(DB::expr('COUNT(username)'), 'total'))
+            ->from('users')
+            ->where('username', '=', $username)
+            ->execute()
+            ->get('total');
+    }
+
 
     /**
     * Updates the active flag of a user to 0

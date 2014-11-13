@@ -77,7 +77,7 @@ class Controller_User_Account extends Controller_Application {
         if ($_POST)
         {
             $post = new Validate($_POST);
-            $post ->rule('username', 'not_empty');
+           // $post ->rule('username', 'not_empty');
             $post ->rule('email', 'not_empty');
             $post ->rule('email', 'email');
             $post ->rule('password', 'not_empty');
@@ -89,12 +89,7 @@ class Controller_User_Account extends Controller_Application {
             $post ->rule('city', 'not_empty');
             $post ->rule('country', 'not_empty');
             $post ->rule('phonenumber', 'not_empty');
-
-//            $post ->rules('password', array(
-//                'not_empty' => NULL,
-//                'max_length' => 50
-//            ));
-
+            $post->rule('username', 'User_Model::unique_username');
 
             if ($post->check())
             {

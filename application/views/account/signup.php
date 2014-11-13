@@ -74,14 +74,14 @@
     </tr>
     <tr>
         <td>
-            <?php echo Form::label('namesurname', 'Full name')?>:<br>
+            <?php echo Form::label('namesurname', 'First name & surname')?>:<br>
             <?php echo Form::input('namesurname', $namesurname); ?>
         </td>
         <td>
             <?php if ($errors): ?>
                 <?php foreach ($errors as $key => $value): ?>
                     <?php if ($key == 'namesurname'): ?>
-                        <li class="errors"><?php echo 'Full name can not be blank.';?></li>
+                        <li class="errors"><?php echo 'First name & surname can not be blank.';?></li>
                     <?php endif ?>
                 <?php endforeach; ?>
             <?php endif ?>
