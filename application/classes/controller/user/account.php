@@ -60,10 +60,11 @@ class Controller_User_Account extends Controller_Application {
             }
 
             if (!$loggeduser && !$loggedadmin) {
+                $invalidlogins = true;
                 $this->template->view = View::factory('account/login')
                     ->bind('user', $user)
                     ->bind('referrer', $referrer)
-                    ->bind('errors', 'invalidlogins');
+                    ->bind('errors', $invalidlogins);
 
             }
 
