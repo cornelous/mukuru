@@ -4,12 +4,6 @@
         <th></th>
     </tr>
             <?php echo Form::open(); ?>
-            <?php if ($errors) : ?>
-            <tr>
-                <?php echo "You have supplied invalid logins" ?>
-            </tr>
-            <?php endif ?>
-
             <tr>
                 <td>
                     <?php echo Form::label('username', 'Username')?>
@@ -27,5 +21,15 @@
                     <?php echo Form::submit('submit', 'Login'); ?>
                 </td>
             </tr>
+
+            <?php if ($errors) : ?>
+                <tr>
+                    <td>
+                        <?php echo "You have supplied invalid logins" ?>
+                    </td>
+                </tr>
+
+            <?php endif ?>
+
             <?php echo Form::close(); ?>
 </table>
