@@ -151,7 +151,7 @@ class Controller_User_Account extends Controller_Application {
             $mailsent = $this->emailer($email,'', $msgheading,'',$msgbody2);
 
             if ($mailsent){
-                $this->request->redirect('msg');
+                $this->request->redirect('msg?err=incomplete');
             }
         }
     }
