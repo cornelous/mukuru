@@ -3,7 +3,7 @@
         <th>Sign Up</th>
         <th></th>
     </tr>
-    <?php echo Form::open(); ?>
+    <?php echo Form::open(NULL, array('enctype' => 'multipart/form-data')); ?>
     <tr>
         <td>
             <?php echo Form::label('avatar', 'You avatar')?>:<br>
