@@ -88,9 +88,6 @@ body {
     background-color:#FFFACD;
 }
 
-
-
-
 #login
 {
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -122,11 +119,6 @@ body {
     background-color:#FFFACD;
 }
 
-
-
-
-
-
 #users
 {
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -153,6 +145,38 @@ body {
     color:#000;
     background-color:#FFFACD;
 }
+
+#success
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -100px;
+}
+
+#success td, #success th
+{
+    font-size:0.8em;
+    border:1px solid green;
+    padding:3px 7px 2px 7px;
+}
+#success th
+{
+    font-size:1.0em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:green;
+    color:#fff;
+}
+#success tr.alt td
+{
+    color:#000;
+    background-color:#FFFACD;
+}
+
 
 /* pagination*/
 div.pagination {

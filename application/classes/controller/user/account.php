@@ -151,7 +151,7 @@ class Controller_User_Account extends Controller_Application {
             $mailsent = $this->emailer($email,'', $msgheading,'',$msgbody2);
 
             if ($mailsent){
-                $this->request->redirect('msg?err=incomplete');
+                $this->request->redirect('msg?msg=pwdreset');
             }
         }
     }
@@ -185,7 +185,10 @@ class Controller_User_Account extends Controller_Application {
             $this->request->redirect('login');
         }
 
-        $view= View::factory('account/msg');
+        $msg = $_GET['msg'];
+        $view= View::factory('account/msg')
+            ->bind('msg', $msg);
+
         $this->template->view = $view;
     }
 
