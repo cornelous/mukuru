@@ -121,6 +121,7 @@
         <td>
             <?php echo Form::label('country', 'Country')?>:<br>
             <?php echo Form::input('country', $country); ?>
+            <?php echo Form::select('country', $country, 'ZIMBABWE', 'SOUTH AFRICA'); ?>
         </td>
         <td>
             <?php if ($errors): ?>
