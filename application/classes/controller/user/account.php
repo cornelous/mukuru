@@ -67,7 +67,7 @@ class Controller_User_Account extends Controller_Application {
         $session = Session::instance();
         $success = $session->destroy();
         if ($success){
-            $this->request->redirect('login');
+            $this->request->redirect('msg?msg=logout');
         }
     }
 

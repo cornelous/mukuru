@@ -16,5 +16,10 @@ window.location.href = "http://cornelo.us/index.php"; //will redirect to your bl
             <?php echo 'Your password has been successfully reset, please check your email' ?>
         </td>
         <?php endif ?>
+        <?php if ($msg == 'logout'): ?>
+            <td>
+                <?php echo 'Your have been successfully logged out' ?>
+            </td>
+        <?php endif ?>
     </tr>
 </table>
