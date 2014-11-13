@@ -178,11 +178,9 @@ class Controller_User_Account extends Controller_Application {
 
     public function action_msg()
     {
-        $session = Session::instance();
-        $username = $session->get('username');
-
+        $referrer = Request::$referrer;
         //protecting my controllers --- to make a helper class later
-        if (!isset($username))
+        if (!isset($referrer))
         {
             $this->request->redirect('login');
         }
