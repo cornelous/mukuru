@@ -178,6 +178,15 @@ class Controller_User_Account extends Controller_Application {
 
     public function action_msg()
     {
+        $session = Session::instance();
+        $username = $session->get('username');
+
+        //protecting my controllers --- to make a helper class later
+        if (!isset($username))
+        {
+            $this->request->redirect('login');
+        }
+
         $view= View::factory('account/msg');
         $this->template->view = $view;
     }
