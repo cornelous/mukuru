@@ -10,6 +10,8 @@ class Model_User {
             ->from($this->_table)
             ->where('username', '=', $username)
             ->where('password', '=', $password)
+            ->where('verified', '=', 1)
+            ->where('active', '=', 1)
             ->execute()
             ->as_array();
     }

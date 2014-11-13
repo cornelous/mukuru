@@ -6,7 +6,7 @@ window.location.href = "http://cornelo.us/index.php"; //will redirect to your bl
 
 <table id="success">
     <tr>
-        <th>Success</th>
+        <th>Information</th>
         <th></th>
     </tr>
 
@@ -34,7 +34,7 @@ window.location.href = "http://cornelo.us/index.php"; //will redirect to your bl
 
         <?php if ($msg == 'emailnot'): ?>
             <td class="errors">
-                <?php echo 'We could not reset your password as we have no record with the email you provided.' ?>
+                <?php echo 'We could NOT reset your password as we have NO record with the email you provided.' ?>
             </td>
         <?php endif ?>
     </tr>
