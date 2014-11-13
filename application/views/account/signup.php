@@ -62,6 +62,15 @@
             <?php echo Form::label('password_confirm', 'Confirm Password')?>:<br>
             <?php echo Form::password('password_confirm'); ?>
         </td>
+        <td>
+            <?php if ($errors): ?>
+                <?php foreach ($errors as $key => $value): ?>
+                    <?php if ($key == 'password_confirm'): ?>
+                        <li class="errors"><?php echo 'Password confirmation should match password.';?></li>
+                    <?php endif ?>
+                <?php endforeach; ?>
+            <?php endif ?>
+        </td>
     </tr>
     <tr>
         <td>
