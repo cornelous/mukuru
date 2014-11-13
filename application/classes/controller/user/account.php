@@ -89,7 +89,7 @@ class Controller_User_Account extends Controller_Application {
             $post ->rule('city', 'not_empty');
             $post ->rule('country', 'not_empty');
             $post ->rule('phonenumber', 'not_empty');
-            $post->rule('username', 'User_Model::unique_username');
+            $post->rule('username', 'Model_User::unique_username');
 
             if ($post->check())
             {
