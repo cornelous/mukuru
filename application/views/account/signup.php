@@ -120,8 +120,7 @@
     <tr>
         <td>
             <?php echo Form::label('country', 'Country')?>:<br>
-            <?php $country = new Model_Country;  $countries = $country->get_all();?>
-            <?php echo Form::select('country', $countries); ?>
+            <?php echo Form::select('country', array('0' =>'', '1'=>'ANGOLA','2'=>'MALAWI','3'=>'SOUTH AFRICA', '4'=>'ZIMBABWE',)); ?>
         </td>
         <td>
             <?php if ($errors): ?>
