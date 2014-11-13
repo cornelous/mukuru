@@ -83,7 +83,7 @@ class Controller_User_Account extends Controller_Application {
             $post ->rule('password', 'not_empty');
             $post ->rule('password', 'min_length', array(6));
             $post ->rule('namesurname', 'not_empty');
-            $post ->rule('password', 'matches', 'password_confirm');
+            $post ->rule('password', 'matches', array('password_confirm'));
             $post ->rule('address', 'not_empty');
             $post ->rule('city', 'not_empty');
             $post ->rule('country', 'not_empty');
