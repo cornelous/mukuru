@@ -25,7 +25,7 @@
             <?php if ($errors) : ?>
                 <tr>
                     <td class="errors">
-                        <?php echo "You have supplied invalid logins" ?>
+                        <?php echo "You have supplied invalid logins. Please try again." ?>
                     </td>
                 </tr>
 
