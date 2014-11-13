@@ -13,7 +13,7 @@
     <tr>
         <td>
             <?php echo Form::label('username', 'Username')?>:<br>
-            <?php echo Form::input('username'); var_dump($username)?>
+            <?php echo Form::input('username', $username); var_dump($username)?>
         </td>
         <td>
             <?php if ($errors): ?>
