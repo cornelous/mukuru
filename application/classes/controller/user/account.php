@@ -163,15 +163,14 @@ class Controller_User_Account extends Controller_Application {
             $verify = new Model_User;
             $verified = $verify->verifytoken($token);
 
-            if ($verified) {
-                foreach ($verified as $verifieduser) {
-                    $session = Session::instance();
-                    $session->set('username', $verifieduser['username']);
-                }
-            }
+//            if ($verified) {
+//                foreach ($verified as $verifieduser) {
+//                    $session = Session::instance();
+//                    $session->set('username', $verifieduser['username']);
+//                }
+//            }
 
-            //redirect to user profile i.e login as user
-            $this->request->redirect('user_profile/index/');
+            $this->request->redirect('msg?msg=verified');
         }
     }
 
