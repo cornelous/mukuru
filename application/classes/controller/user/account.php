@@ -130,7 +130,12 @@ class Controller_User_Account extends Controller_Application {
         $this->template->view  = View::factory('account/signup')
             ->bind('user', $user)
             ->bind('username', $_POST['username'])
-            ->bind('namesurname', $namesurname)
+            ->bind('email', $_POST['email'])
+            ->bind('namesurname', $_POST['namesurname'])
+            ->bind('address', $_POST['address'])
+            ->bind('city', $_POST['city'])
+            ->bind('country', $_POST['country'])
+            ->bind('phonenumber', $_POST['phonenumber'])
             ->bind('errors', $errors);
     }
 

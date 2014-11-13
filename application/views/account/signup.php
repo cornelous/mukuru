@@ -13,7 +13,7 @@
     <tr>
         <td>
             <?php echo Form::label('username', 'Username')?>:<br>
-            <?php echo Form::input('username', $username); var_dump($username)?>
+            <?php echo Form::input('username', $username);?>
         </td>
         <td>
             <?php if ($errors): ?>
@@ -28,7 +28,7 @@
     <tr>
         <td>
             <?php echo Form::label('email', 'Email Address')?>:<br>
-            <?php echo Form::input('email'); ?>
+            <?php echo Form::input('email', $email); ?>
         </td>
         <td>
             <?php if ($errors): ?>
@@ -75,7 +75,7 @@
     <tr>
         <td>
             <?php echo Form::label('namesurname', 'Full name')?>:<br>
-            <?php echo Form::input('namesurname'); ?>
+            <?php echo Form::input('namesurname', $namesurname); ?>
         </td>
         <td>
             <?php if ($errors): ?>
@@ -90,7 +90,7 @@
     <tr>
         <td>
             <?php echo Form::label('address', 'Address')?>:<br>
-            <?php echo Form::input('address'); ?>
+            <?php echo Form::input('address', $address); ?>
         </td>
         <td>
             <?php if ($errors): ?>
@@ -105,7 +105,7 @@
     <tr>
         <td>
             <?php echo Form::label('city', 'City')?>:<br>
-            <?php echo Form::input('city'); ?>
+            <?php echo Form::input('city', $city); ?>
         </td>
         <td>
             <?php if ($errors): ?>
@@ -120,7 +120,7 @@
     <tr>
         <td>
             <?php echo Form::label('country', 'Country')?>:<br>
-            <?php echo Form::input('country'); ?>
+            <?php echo Form::input('country', $country); ?>
         </td>
         <td>
             <?php if ($errors): ?>
@@ -135,7 +135,7 @@
     <tr>
         <td>
             <?php echo Form::label('phonenumber', 'Phone number')?>:<br>
-            <?php echo Form::input('phonenumber'); ?>
+            <?php echo Form::input('phonenumber', $phonenumber); ?>
         </td>
         <td>
             <?php if ($errors): ?>
