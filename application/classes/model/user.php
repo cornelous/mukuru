@@ -61,6 +61,11 @@ class Model_User {
         if ($passwordrest){
             return $newpassword;
         }
+        if (!$passwordrest){
+            return FALSE;
+        }
+
+
 
     }
 

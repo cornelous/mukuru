@@ -31,5 +31,12 @@ window.location.href = "http://cornelo.us/index.php"; //will redirect to your bl
                 <?php echo 'You have successfully verified your email, you will now be redirected to the login page' ?>
             </td>
         <?php endif ?>
+
+        <?php if ($msg == 'emailnot'): ?>
+            <td>
+                <?php echo 'We could not reset your password as we have no record with the email you provided.' ?>
+            </td>
+        <?php endif ?>
     </tr>
 </table>
+emailnot

@@ -154,14 +154,26 @@ class Controller_User_Account extends Controller_Application {
             $user = new Model_User;
             $newpassword = $user->resetpassword($email);
 
-            $msgheading =  'New Password';
-            $msgbody2 = "Your new password is {$newpassword}";
+            if ($newpassword)
+            {
 
-            $mailsent = $this->emailer($email,'', $msgheading,'',$msgbody2);
+                $msgheading =  'New Password';
+                $msgbody2 = "Your new password is {$newpassword}";
 
-            if ($mailsent){
-                $this->request->redirect('msg?msg=pwdreset');
+                $mailsent = $this->emailer($email,'', $msgheading,'',$msgbody2);
+
+                if ($mailsent){
+                    $this->request->redirect('msg?msg=pwdreset');
+                }
             }
+
+            if (!$newpassword)
+            {
+                $this->request->redirect('msg?msg=emailnot');
+            }
+
+
+
         }
     }
 
