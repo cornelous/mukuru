@@ -59,6 +59,14 @@ class Controller_User_Account extends Controller_Application {
                 $this->request->redirect('welcome');
             }
 
+            if (!$loggeduser && !$loggedadmin) {
+                $this->template->view = View::factory('account/login')
+                    ->bind('user', $user)
+                    ->bind('referrer', $referrer)
+                    ->bind('errors', 'invalidlogins');
+
+            }
+
         }
     }
 
@@ -177,7 +185,7 @@ class Controller_User_Account extends Controller_Application {
     public function action_msg()
     {
         /**
-         * 
+         *
          *
         $referrer = Request::$referrer;
         //protecting my controllers --- to make a helper class later

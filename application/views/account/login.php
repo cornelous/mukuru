@@ -1,4 +1,7 @@
 <table id="login">
+    <?php if ($errors) : ?>
+        <?php echo "You logins are invalid" ?>
+    <?php endif ?>
     <tr>
         <th>Login</th>
         <th></th>
