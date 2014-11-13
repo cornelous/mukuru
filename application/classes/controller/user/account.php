@@ -140,9 +140,12 @@ class Controller_User_Account extends Controller_Application {
             $post ->rule('phonenumber', 'not_empty');
             $post->rule('username', 'Model_User::unique_username');
 
+            var_dump($_FILES['avatar']);
+
             if (isset($_FILES['avatar']))
             {
                 $filename = $this->_save_image($_FILES['avatar']);
+                var_dump($_FILES['avatar']);
             }
 
             if (($post->check()) && $filename)

@@ -6,7 +6,7 @@
     <?php echo Form::open(); ?>
     <tr>
         <td>
-            <?php echo Form::label('image', 'Image')?>:<br>
+            <?php echo Form::label('avatar', 'You avatar')?>:<br>
             <?php echo Form::file('avatar'); ?>
         </td>
     </tr>
