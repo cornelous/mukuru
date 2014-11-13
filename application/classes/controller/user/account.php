@@ -129,7 +129,7 @@ class Controller_User_Account extends Controller_Application {
         }
         $this->template->view  = View::factory('account/signup')
             ->bind('user', $user)
-            ->bind('username', $username)
+            ->bind('username', $_POST['username'])
             ->bind('namesurname', $namesurname)
             ->bind('errors', $errors);
     }
