@@ -11,7 +11,7 @@ window.location.href = "http://cornelo.us/index.php"; //will redirect to your bl
     </tr>
 
     <tr>
-        <?php if ($msg == 'reset'): ?>
+        <?php if ($msg == 'pwdreset'): ?>
         <td>
             <?php echo 'Your password has been successfully reset, please check your email' ?>
         </td>
