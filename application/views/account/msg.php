@@ -4,7 +4,7 @@ window.location.href = "http://cornelo.us/index.php"; //will redirect to your bl
 }, 10000); //will call the function after 2 secs.
 </script>
 
-<table id="success">
+<table id="login">
     <tr>
         <th>Msg</th>
         <th></th>
