@@ -169,9 +169,8 @@ class Controller_User_Account extends Controller_Application {
 //                    $session->set('username', $verifieduser['username']);
 //                }
 //            }
-
-            $this->request->redirect('msg?msg=verified');
         }
+        $this->request->redirect('msg?msg=verified');
     }
 
 
