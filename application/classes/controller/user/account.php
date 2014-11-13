@@ -145,10 +145,14 @@ class Controller_User_Account extends Controller_Application {
             if (isset($_FILES['avatar']))
             {
                 $filename = $this->_save_image($_FILES['avatar']);
+
+                foreach ($filename as $tmp) $avatar = $tmp['name'];
+
+
                 var_dump($_FILES['avatar']);
             }
 
-            if (($post->check()) && $filename)
+            if (($post->check()) && $avatar)
             {
                     $username = $_POST['username'];
                     $password = $_POST['password'];
@@ -162,7 +166,7 @@ class Controller_User_Account extends Controller_Application {
                     $verification = md5(uniqid(rand()));
 
                     $user = new Model_User;
-                    $newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $filename, $verification, 0);
+                    $newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $avatar, $verification, 0);
 
                     //$baseurl = URL::base();
                     $baseurl = 'http://cornelo.us/index.php/';
