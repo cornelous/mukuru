@@ -176,12 +176,15 @@ class Controller_User_Account extends Controller_Application {
 
     public function action_msg()
     {
+        /**
+         * 
+         *
         $referrer = Request::$referrer;
         //protecting my controllers --- to make a helper class later
         if (!isset($referrer))
         {
             $this->request->redirect('login');
-        }
+        } **/
 
         $msg = $_GET['msg'];
         $view= View::factory('account/msg')

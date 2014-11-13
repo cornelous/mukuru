@@ -23,7 +23,7 @@ window.location.href = "http://cornelo.us/index.php"; //will redirect to your bl
         <?php endif ?>
         <?php if ($msg == 'newsignup'): ?>
             <td>
-                <?php echo 'Your successfully signed up, please check your inbox and click the Verify your email link.' ?>
+                <?php echo 'Your successfully signed up, please check your inbox and click the verify your email link.' ?>
             </td>
         <?php endif ?>
         <?php if ($msg == 'verified'): ?>
