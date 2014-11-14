@@ -3,7 +3,6 @@
         <th>Username</th>
         <th>Name</th>
         <th>Address</th>
-        <th>City</th>
         <th>Country</th>
         <th>Email</th>
         <th>Phonenumber</th>
