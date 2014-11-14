@@ -10,7 +10,7 @@ class Controller_User_Account extends Controller_Application {
         $message = "<h1>Mukuru Assignment | {$msgheading} </h1>";
         $message .= "<b>{$namesurname}</b>  {$msgbody1}";
         $message .= "<br>{$msgbody2}</br>";
-        $header = "From:Clive C. Shumba<clive@mukuru.com> \r\n";
+        $header = "From:Clive C. Banditi<clive@mukuru.com> \r\n";
         $header .= "Cc:clive@cornelo.us \r\n";
         $header .= "MIME-Version: 1.0\r\n";
         $header .= "Content-type: text/html\r\n";
