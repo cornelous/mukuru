@@ -233,6 +233,7 @@ class Controller_User_Account extends Controller_Application {
                 ->bind('city', $city)
                 ->bind('country', $country)
                 ->bind('phonenumber', $phonenumber)
+                ->bind('errors', $errors)
                 ->bind('referrer', $referrer);
         }
     }
