@@ -204,6 +204,17 @@ class Controller_User_Account extends Controller_Application {
         }
     }
 
+    public function action_activ()
+    {
+        if ($_GET){
+            $uid = $_GET['uid'];
+            $referrer = Request::$referrer;
+            $this->template->view = View::factory('account/activ')
+                ->bind('uid', $uid)
+                ->bind('referrer', $referrer);
+        }
+    }
+
     public function action_msg()
     {
         /**
