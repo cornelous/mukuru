@@ -216,13 +216,23 @@ class Controller_User_Account extends Controller_Application {
             if ($edits)
             {
 
+                foreach ($edits as $user) {
+                    $namesurname = $edits['namesurname'];
+                    $address = $edits['address'];
+                    $city = $edits['city'];
+                    $country = $edits['country'];
+                    $phonenumber = $edits['phonenumber'];
+                }
                 var_dump($edits);
             }
 
-
             $this->template->view = View::factory('account/edit')
                 ->bind('uname', $uname)
-                ->bind('errors', $errors)
+                ->bind('namesurname', $namesurname)
+                ->bind('address', $address)
+                ->bind('city', $city)
+                ->bind('country', $country)
+                ->bind('phonenumber', $phonenumber)
                 ->bind('referrer', $referrer);
         }
     }
