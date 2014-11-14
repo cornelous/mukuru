@@ -105,12 +105,13 @@ class Model_User {
     * Updates the active flag of a user to 0
     *
     */
-    public function delete($user_id, $message)
+    public function activ($uid, $status)
     {
-        return DB::delete($this->_table)
-        ->where('user_id', '=', $user_id)
-        ->where('message', '=', $message)
-        ->execute();
+        return DB::update($this->_table)->set(array(
+            'active' =>$status
+        ))
+            ->where('id', '=', $uid)
+            ->execute();
     }
 
     //sign in, logout, resetpassword,

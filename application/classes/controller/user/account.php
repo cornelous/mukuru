@@ -208,9 +208,11 @@ class Controller_User_Account extends Controller_Application {
     {
         if ($_GET){
             $uid = $_GET['uid'];
+            $status = $_GET['status'];
             $referrer = Request::$referrer;
             $this->template->view = View::factory('account/activ')
                 ->bind('uid', $uid)
+                ->bind('status', $status)
                 ->bind('referrer', $referrer);
         }
     }

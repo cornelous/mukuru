@@ -25,7 +25,7 @@
         <td><?php echo ($user['active'] == 1? 'ACTIVE': 'DISABLED'); ?></td>
         <td><?php echo ($user['verified'] == 1? 'VERIFIED': 'NOT VERIFIED'); ?></td>
         <td><?php echo HTML::anchor("edit?uid={$user['id']}", 'Edit');?> |
-            <?php echo HTML::anchor("activ?uid={$user['id']}", $user['active'] == 0? 'Enable': 'Disable');?>
+            <?php echo HTML::anchor("activ?uid={$user['id']}&status=!{$user['active']}", $user['active'] == 0? 'Enable': 'Disable');?>
         </td>
     </tr>
     <?php else: ?>
