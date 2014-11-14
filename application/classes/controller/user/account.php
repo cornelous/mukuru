@@ -210,13 +210,13 @@ class Controller_User_Account extends Controller_Application {
             $uname = $_GET['uname'];
 
 
-            $edituser = new Model_User;
-            $edits = $edituser->getuserdetail($uname);
+            $modeluser = new Model_User;
+            $edituser = $modeluser->getuserdetail($uname);
 
-            if ($edits)
+            if ($edituser)
             {
 
-                foreach ($edits as $user) {
+                foreach ($edituser as $edits) {
                     $namesurname = $edits['namesurname'];
                     $address = $edits['address'];
                     $city = $edits['city'];
