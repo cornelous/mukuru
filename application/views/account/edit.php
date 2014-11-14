@@ -118,7 +118,7 @@
     </tr>
     <tr>
         <td>
-            <?php echo Form::submit('submit', 'Sign Up'); ?>
+            <?php echo Form::submit('submit', 'Update Details'); ?>
         </td>
     </tr>
     <?php echo Form::close(); ?>

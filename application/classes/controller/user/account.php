@@ -205,17 +205,49 @@ class Controller_User_Account extends Controller_Application {
             $this->request->redirect('login');
         }
 
-        if ($_GET){
-            $errors = array();
-            $uname = $_GET['uname'];
+        if ($_POST)
+        {
+            $post = new Validate($_POST);
+            $post ->rule('password', 'not_empty');
+            $post ->rule('password', 'min_length', array(6));
+            $post ->rule('namesurname', 'not_empty');
+            $post ->rule('password', 'matches', array('password_confirm'));
+            $post ->rule('password_confirm', 'matches', array('password'));
+            $post ->rule('address', 'not_empty');
+            $post ->rule('city', 'not_empty');
+            $post ->rule('country', 'not_empty');
+            $post ->rule('phonenumber', 'not_empty');
 
+            if ($post->check())
+            {
+                $password = $_POST['password'];
+                $namesurname = $_POST['namesurname'];
+                $address = $_POST['address'];
+                $city = $_POST['city'];
+                $country = $_POST['country'];
+                $phonenumber = $_POST['phonenumber'];
+
+                $user = new Model_User;
+                //$newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $image, $verification, 0);
+                $newuser = 0;
+                if ($newuser){
+                    $this->request->redirect('user_profile/index/');
+                }
+            }
+            $errors = $post->errors();
+
+        }
+
+
+        if ($_GET)
+        {
+            $uname = $_GET['uname'];
 
             $modeluser = new Model_User;
             $edituser = $modeluser->getuserdetail($uname);
 
             if ($edituser)
             {
-
                 foreach ($edituser as $edits) {
                     $namesurname = $edits['namesurname'];
                     $address = $edits['address'];
@@ -226,18 +258,19 @@ class Controller_User_Account extends Controller_Application {
                 }
                 var_dump($edits);
             }
-
-            $this->template->view = View::factory('account/edit')
-                ->bind('uname', $uname)
-                ->bind('namesurname', $namesurname)
-                ->bind('address', $address)
-                ->bind('city', $city)
-                ->bind('country', $country)
-                ->bind('phonenumber', $phonenumber)
-                ->bind('password', $password)
-                ->bind('errors', $errors)
-                ->bind('referrer', $referrer);
         }
+
+
+        $this->template->view = View::factory('account/edit')
+            ->bind('uname', $uname)
+            ->bind('namesurname', $namesurname)
+            ->bind('address', $address)
+            ->bind('city', $city)
+            ->bind('country', $country)
+            ->bind('phonenumber', $phonenumber)
+            ->bind('password', $password)
+            ->bind('errors', $errors)
+            ->bind('referrer', $referrer);
     }
 
     public function action_activ()
