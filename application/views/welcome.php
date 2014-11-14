@@ -19,7 +19,6 @@
         <td><?php echo $user['username']; ?></td>
         <td><?php echo $user['namesurname']; ?></td>
         <td><?php echo $user['address']; ?></td>
-        <td><?php echo $user['city']; ?></td>
         <td><?php echo $user['country']; ?></td>
         <td><?php echo $user['email']; ?></td>
         <td><?php echo $user['phonenumber']; ?></td>
@@ -33,7 +32,6 @@
             <td><?php echo $user['username']; ?></td>
             <td><?php echo $user['namesurname']; ?></td>
             <td><?php echo $user['address']; ?></td>
-            <td><?php echo $user['city']; ?></td>
             <td><?php echo $user['country']; ?></td>
             <td><?php echo $user['email']; ?></td>
             <td><?php echo $user['phonenumber']; ?></td>
