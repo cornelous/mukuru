@@ -13,7 +13,7 @@
     <tr>
         <td>
             <?php echo Form::label('password', 'Password')?>:<br>
-            <?php echo Form::password('password'); ?>
+            <?php echo Form::password('password', $password); ?>
         </td>
         <td>
             <?php if ($errors): ?>
@@ -29,7 +29,7 @@
     <tr>
         <td>
             <?php echo Form::label('password_confirm', 'Confirm Password')?>:<br>
-            <?php echo Form::password('password_confirm'); ?>
+            <?php echo Form::password('password_confirm', $password); ?>
         </td>
         <td>
             <?php if ($errors): ?>
