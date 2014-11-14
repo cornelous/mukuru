@@ -214,7 +214,7 @@ class Controller_User_Account extends Controller_Application {
         {
             $this->request->redirect('login');
         }
-        
+
         $referrer = Request::$referrer;
         if ($_GET){
             $uid = $_GET['uid'];

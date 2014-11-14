@@ -2,6 +2,7 @@
     <tr>
         <th>Username</th>
         <th>Name</th>
+        <th>City</th>
         <th>Address</th>
         <th>Country</th>
         <th>Email</th>
@@ -18,13 +19,14 @@
         <td><?php echo $user['username']; ?></td>
         <td><?php echo $user['namesurname']; ?></td>
         <td><?php echo $user['address']; ?></td>
+        <td><?php echo $user['city']; ?></td>
         <td><?php echo $user['country']; ?></td>
         <td><?php echo $user['email']; ?></td>
         <td><?php echo $user['phonenumber']; ?></td>
         <td><?php echo $user['password']; ?></td>
         <td><?php echo ($user['active'] == 1? 'ACTIVE': 'DISABLED'); ?></td>
         <td><?php echo ($user['verified'] == 1? 'VERIFIED': 'NOT VERIFIED'); ?></td>
-        <td><?php echo HTML::anchor("edit?uid={$user['id']}", 'Edit');?> |
+        <td>
             <?php echo HTML::anchor("activ?uid={$user['id']}&status={$user['active']}", $user['active'] == 0? 'Enable': 'Disable');?>
         </td>
     </tr>
@@ -33,13 +35,14 @@
             <td><?php echo $user['username']; ?></td>
             <td><?php echo $user['namesurname']; ?></td>
             <td><?php echo $user['address']; ?></td>
+            <td><?php echo $user['city']; ?></td>
             <td><?php echo $user['country']; ?></td>
             <td><?php echo $user['email']; ?></td>
             <td><?php echo $user['phonenumber']; ?></td>
             <td><?php echo $user['password']; ?></td>
             <td><?php echo ($user['active'] == 1? 'ACTIVE': 'DISABLED'); ?></td>
             <td><?php echo ($user['verified'] == 1? 'VERIFIED': 'NOT VERIFIED'); ?></td>
-            <td><?php echo HTML::anchor("edit?uid={$user['id']}", 'Edit');?> |
+            <td>
                 <?php echo HTML::anchor("activ?uid={$user['id']}&status={$user['active']}", $user['active'] == 0? 'Enable': 'Disable');?>
             </td>
         </tr>
