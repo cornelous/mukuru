@@ -126,6 +126,20 @@ Route::set('reset', 'reset')
         'action'     => 'reset',
     ));
 
+Route::set('edit', 'edit')
+    ->defaults(array(
+        'directory' => 'user',
+        'controller' => 'account',
+        'action'     => 'edit',
+    ));
+
+Route::set('activ', 'activ')
+    ->defaults(array(
+        'directory' => 'user',
+        'controller' => 'account',
+        'action'     => 'activ',
+    ));
+
 Route::set('verify', 'verify')
     ->defaults(array(
         'directory' => 'user',
