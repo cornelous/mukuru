@@ -205,10 +205,12 @@ class Controller_User_Account extends Controller_Application {
         }
 
         if ($_GET){
+            $errors = array();
             $uname = $_GET['uname'];
             $referrer = Request::$referrer;
             $this->template->view = View::factory('account/edit')
                 ->bind('uname', $uname)
+                ->bind('errors', $errors)
                 ->bind('referrer', $referrer);
         }
     }
