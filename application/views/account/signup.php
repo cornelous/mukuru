@@ -6,8 +6,8 @@
     <?php echo Form::open(NULL, array('enctype' => 'multipart/form-data')); ?>
     <tr>
         <td>
-            <?php echo Form::label('avatar', 'You avatar')?>:<br>
-            <?php echo Form::file('avatar'); ?>
+            <?php echo Form::label('image', 'You avatar')?>:<br>
+            <?php echo Form::file('image'); ?>
         </td>
     </tr>
     <tr>
