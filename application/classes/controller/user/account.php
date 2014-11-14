@@ -195,11 +195,20 @@ class Controller_User_Account extends Controller_Application {
 
     public function action_edit()
     {
+        $session = Session::instance();
+        $username = $session->get('username');
+
+        //protecting my controllers --- to make a helper class later
+        if (!isset($username))
+        {
+            $this->request->redirect('login');
+        }
+
         if ($_GET){
-            $uid = $_GET['uid'];
+            $uname = $_GET['uname'];
             $referrer = Request::$referrer;
             $this->template->view = View::factory('account/edit')
-                ->bind('uid', $uid)
+                ->bind('uname', $uname)
                 ->bind('referrer', $referrer);
         }
     }
