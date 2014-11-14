@@ -18,35 +18,6 @@ class Controller_User_Account extends Controller_Application {
         return $retval;
     }
 
-    protected function _save_image($image)
-    {
-        if (
-            ! Upload::valid($image) OR
-            ! Upload::not_empty($image) OR
-            ! Upload::type($image, array('jpg', 'jpeg', 'png', 'gif')))
-        {
-            return FALSE;
-        }
-
-        $directory = DOCROOT.'uploads/';
-
-        if ($file = Upload::save($image, NULL, $directory))
-        {
-            $filename = strtolower(Text::random('alnum', 20)).'.jpg';
-
-            Image::factory($file)
-                ->resize(200, 200, Image::AUTO)
-                ->save($directory.$filename);
-
-            // Delete the temporary file
-            unlink($file);
-
-            return $filename;
-        }
-
-        return FALSE;
-    }
-
     /*
      * Handles logins for both normal and admin users
      */
@@ -111,17 +82,6 @@ class Controller_User_Account extends Controller_Application {
 
     public function action_signup()
     {
-            if (isset($_FILES['avatar']))
-            {
-                $filename = $this->_save_image($_FILES['avatar']);
-            }
-
-
-//        if ( ! $filename)
-//        {
-//            $error_message = 'There was a problem while uploading the image.
-//                Make sure it is uploaded and must be JPG/PNG/GIF file.';
-//        }
 
         if ($_POST)
         {
@@ -140,15 +100,7 @@ class Controller_User_Account extends Controller_Application {
             $post ->rule('phonenumber', 'not_empty');
             $post->rule('username', 'Model_User::unique_username');
 
-            var_dump($_FILES['avatar']);
-
-            if (isset($_FILES['avatar']))
-            {
-                $filename = $this->_save_image($_FILES['avatar']);
-                var_dump($filename);
-            }
-
-            if (($post->check()) && $filename)
+            if ($post->check())
             {
                     $username = $_POST['username'];
                     $password = $_POST['password'];
@@ -162,7 +114,7 @@ class Controller_User_Account extends Controller_Application {
                     $verification = md5(uniqid(rand()));
 
                     $user = new Model_User;
-                    $newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $filename, $verification, 0);
+                    $newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $image, $verification, 0);
 
                     //$baseurl = URL::base();
                     $baseurl = 'http://cornelo.us/index.php/';
@@ -220,8 +172,6 @@ class Controller_User_Account extends Controller_Application {
                 $this->request->redirect('msg?msg=emailnot');
             }
 
-
-
         }
     }
 
@@ -242,6 +192,17 @@ class Controller_User_Account extends Controller_Application {
         $this->request->redirect('msg?msg=verified');
     }
 
+
+    public function action_edit()
+    {
+        if ($_GET){
+            $uid = $_GET['uid'];
+            $referrer = Request::$referrer;
+            $this->template->view = View::factory('account/edit')
+                ->bind('uid', $uid)
+                ->bind('referrer', $referrer);
+        }
+    }
 
     public function action_msg()
     {

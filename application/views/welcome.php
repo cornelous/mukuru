@@ -26,7 +26,7 @@
         <td><?php echo $user['password']; ?></td>
         <td><?php echo ($user['active'] == 1? 'ACTIVE': 'DISABLED'); ?></td>
         <td><?php echo ($user['verified'] == 1? 'VERIFIED': 'NOT VERIFIED'); ?></td>
-        <td> Edit | Disable</td>
+        <td><?php echo HTML::anchor("edit?uid={$user['id']}", 'Edit');?></td>
     </tr>
     <?php else: ?>
         <tr class = "alt">
@@ -40,7 +40,7 @@
             <td><?php echo $user['password']; ?></td>
             <td><?php echo ($user['active'] == 1? 'ACTIVE': 'DISABLED'); ?></td>
             <td><?php echo ($user['verified'] == 1? 'VERIFIED': 'NOT VERIFIED'); ?></td>
-            <td> Edit | Disable</td>
+            <td><?php echo HTML::anchor("edit?uid={$user['id']}", 'Edit');?></td>
         </tr>
      <?php endif; ?>
     <?php $count++;?>
