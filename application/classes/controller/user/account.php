@@ -195,6 +195,7 @@ class Controller_User_Account extends Controller_Application {
 
     public function action_edit()
     {
+        $referrer = Request::$referrer;
         $session = Session::instance();
         $username = $session->get('username');
 
@@ -207,7 +208,18 @@ class Controller_User_Account extends Controller_Application {
         if ($_GET){
             $errors = array();
             $uname = $_GET['uname'];
-            $referrer = Request::$referrer;
+
+
+            $edituser = new Model_User;
+            $edits = $edituser->getuserdetail($uname);
+
+            if ($edits)
+            {
+
+                var_dump($edits);
+            }
+
+
             $this->template->view = View::factory('account/edit')
                 ->bind('uname', $uname)
                 ->bind('errors', $errors)
