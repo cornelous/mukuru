@@ -110,7 +110,7 @@ class Controller_User_Account extends Controller_Application {
                     $country = $_POST['country'];
                     $email = $_POST['email'];
                     $phonenumber = $_POST['phonenumber'];
-                    $image = $_POST['image'];
+                    $image = $_FILES['image'];
                     $verification = md5(uniqid(rand()));
 
                     $user = new Model_User;
