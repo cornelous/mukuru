@@ -114,5 +114,18 @@ class Model_User {
             ->execute();
     }
 
-    //sign in, logout, resetpassword,
+    public function update($username, $namesurname,$address, $city, $country,$phonenumber,$password)
+    {
+        return DB::update($this->_table)->set(array(
+            'namesurname' =>$namesurname,
+            'address' =>$address,
+            'city' =>$city,
+            'country' =>$country,
+            'phonenumber' =>$phonenumber,
+            'password' =>$password,
+
+        ))
+            ->where('username', '=', $username)
+            ->execute();
+    }
 }

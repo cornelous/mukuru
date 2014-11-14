@@ -228,9 +228,9 @@ class Controller_User_Account extends Controller_Application {
                 $phonenumber = $_POST['phonenumber'];
 
                 $user = new Model_User;
-                //$newuser = $user->add($username, $password, $namesurname, $address, $city, $country, $email, $phonenumber, $image, $verification, 0);
-                $newuser = 0;
-                if ($newuser){
+                $newupdate = $user->update($username, $namesurname,$address, $city, $country,$phonenumber,$password);
+
+                if ($newupdate){
                     $this->request->redirect('user_profile/index/');
                 }
             }
