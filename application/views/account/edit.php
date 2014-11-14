@@ -12,37 +12,6 @@
     </tr>
     <tr>
         <td>
-            <?php echo Form::label('username', 'Username')?>:<br>
-            <?php echo Form::input('username', $username);?>
-        </td>
-        <td>
-            <?php if ($errors): ?>
-                <?php foreach ($errors as $key => $value): ?>
-                    <?php if ($key == 'username'): ?>
-                        <li class="errors"><?php echo 'If username is NOT blank then this username has already been taken. Please choose another one.';?></li>
-                    <?php endif ?>
-                <?php endforeach; ?>
-            <?php endif ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <?php echo Form::label('email', 'Email Address')?>:<br>
-            <?php echo Form::input('email', $email); ?>
-        </td>
-        <td>
-            <?php if ($errors): ?>
-                <?php foreach ($errors as $key => $value): ?>
-                    <?php if ($key == 'email'): ?>
-                        <li class="errors"><?php echo 'Email can not be blank.';?></li>
-                        <li class="errors"><?php echo 'Email should be a valid email address.';?></li>
-                    <?php endif ?>
-                <?php endforeach; ?>
-            <?php endif ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
             <?php echo Form::label('password', 'Password')?>:<br>
             <?php echo Form::password('password'); ?>
         </td>
