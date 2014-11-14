@@ -222,6 +222,7 @@ class Controller_User_Account extends Controller_Application {
                     $city = $edits['city'];
                     $country = $edits['country'];
                     $phonenumber = $edits['phonenumber'];
+                    $password = $edits['password'];
                 }
                 var_dump($edits);
             }
@@ -233,6 +234,7 @@ class Controller_User_Account extends Controller_Application {
                 ->bind('city', $city)
                 ->bind('country', $country)
                 ->bind('phonenumber', $phonenumber)
+                ->bind('password', $password)
                 ->bind('errors', $errors)
                 ->bind('referrer', $referrer);
         }
