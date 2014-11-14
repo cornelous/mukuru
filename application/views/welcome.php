@@ -27,6 +27,7 @@
         <td><?php echo ($user['verified'] == 1? 'VERIFIED': 'NOT VERIFIED'); ?></td>
         <td><?php echo HTML::anchor("edit?uid={$user['id']}", 'Edit');?> |
             <?php echo HTML::anchor("deactivate?uid={$user['id']}", $user['active'] == 1? 'Enable': 'Disable');?>
+        </td>
     </tr>
     <?php else: ?>
         <tr class = "alt">
