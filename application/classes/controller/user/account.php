@@ -143,7 +143,7 @@ class Controller_User_Account extends Controller_Application {
             ->bind('namesurname', $_POST['namesurname'])
             ->bind('address', $_POST['address'])
             ->bind('city', $_POST['city'])
-            ->bind('country', $_POST['country'])
+            ->bind('country', $country)
             ->bind('phonenumber', $_POST['phonenumber'])
             ->bind('errors', $errors);
     }
