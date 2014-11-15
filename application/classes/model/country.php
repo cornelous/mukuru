@@ -8,6 +8,6 @@ class Model_Country {
         return DB::select()
             ->from($this->_table)
             ->execute()
-            ->as_array('name', 'name');
+            ->as_array('id', 'country');
     }
 }
