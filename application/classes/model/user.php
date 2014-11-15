@@ -20,6 +20,8 @@ class Model_User {
     {
         return DB::select('*')
             ->from($this->_table)
+            ->join('countries', 'INNER')
+            ->on('users.country', '=', 'countries.id')
             ->where('username', '=', $username)
             ->execute()
             ->as_array();
