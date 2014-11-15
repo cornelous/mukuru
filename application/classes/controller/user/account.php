@@ -86,7 +86,6 @@ class Controller_User_Account extends Controller_Application {
 
         $countries = new Model_Country();
         $country = $countries->get_all();
-        var_dump($country);
 
         if ($_POST)
         {
