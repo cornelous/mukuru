@@ -293,8 +293,8 @@ class Controller_User_Account extends Controller_Application {
         $referrer = Request::$referrer;
         var_dump($_GET);
         if ($_GET){
-            $uid = $_GET['uid'];
-            $status = $_GET['status'];
+            $uid = (int)$_GET['uid'];
+            $status = (int)$_GET['status'];
             $activ = new Model_User;
             $result = $activ->activ($uid, $status);
             var_dump($status);var_dump($uid);

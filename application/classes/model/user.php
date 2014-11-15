@@ -112,9 +112,9 @@ class Model_User {
     public function activ($uid, $status)
     {
         return DB::update($this->_table)->set(array(
-            'active' =>!(int)$status,
+            'active' =>!$status,
         ))
-            ->where('id', '=', (int)$uid)
+            ->where('id', '=', $uid)
             ->execute();
     }
 
