@@ -12,11 +12,11 @@
         <th>Verified</th>
         <th>Actions</th>
     </tr>
-    <?php var_dump($users); $count = 0;?>
+    <?php $count = 0;?>
     <?php foreach ($users as $user) : ?>
     <?php if ($count %2 == 0): ?>
     <tr>
-        <td><?php echo $user['username']; ?></td>
+        <td><?php echo $user['username']; var_dump($users);?></td>
         <td><?php echo $user['namesurname']; ?></td>
         <td><?php echo $user['address']; ?></td>
         <td><?php echo $user['city']; ?></td>
