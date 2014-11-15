@@ -3,7 +3,8 @@
 class Controller_User_Account extends Controller_Application {
 
     //if time permits before I send Deon, develop a custom mailer class to use across project!!!!
-    protected function emailer($email, $namesurname = '', $msgheading, $msgbody1 = '', $msgbody2){
+    protected function emailer($email, $namesurname = '', $msgheading, $msgbody1 = '', $msgbody2)
+    {
 
         $to = $email;
         $subject = "Mukuru Assignment | {$msgheading}";
@@ -82,6 +83,10 @@ class Controller_User_Account extends Controller_Application {
 
     public function action_signup()
     {
+
+        $countries = new Model_Country();
+        $country = $countries->get_all();
+        var_dump($country);
 
         if ($_POST)
         {
