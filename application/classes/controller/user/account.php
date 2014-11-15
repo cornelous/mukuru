@@ -203,6 +203,9 @@ class Controller_User_Account extends Controller_Application {
         $session = Session::instance();
         $username = $session->get('username');
 
+        $countries = new Model_Country();
+        $country = $countries->get_all();
+
         //protecting my controllers --- to make a helper class later
         if (!isset($username))
         {
@@ -256,11 +259,10 @@ class Controller_User_Account extends Controller_Application {
                     $namesurname = $edits['namesurname'];
                     $address = $edits['address'];
                     $city = $edits['city'];
-                    $country = $edits['country'];
+                    //$country = $edits['country'];
                     $phonenumber = $edits['phonenumber'];
                     $password = $edits['password'];
                 }
-                var_dump($edits);
             }
         }
 
