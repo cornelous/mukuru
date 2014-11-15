@@ -29,7 +29,7 @@ class Controller_Welcome extends Controller_Application {
         $view = View::factory('welcome')
             ->bind('users', $users)
             ->bind('pager_links', $pager_links);
-        
+
         $this->template->view = $view;
 	}
 
