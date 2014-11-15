@@ -13,11 +13,6 @@ class Controller_Welcome extends Controller_Application {
           $this->request->redirect('login');
         }
 
-
-        $view = View::factory('welcome')
-            ->bind('users', $users)
-            ->bind('pager_links', $pager_links);
-
         $user = new Model_User;
         $user_count = $user->count_all();
 
@@ -31,6 +26,10 @@ class Controller_Welcome extends Controller_Application {
         $users = $user->get_all($pagination->items_per_page,
             $pagination->offset);
 
+        $view = View::factory('welcome')
+            ->bind('users', $users)
+            ->bind('pager_links', $pager_links);
+        
         $this->template->view = $view;
 	}
 
