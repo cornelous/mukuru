@@ -297,6 +297,7 @@ class Controller_User_Account extends Controller_Application {
             $status = $_GET['status'];
             $activ = new Model_User;
             $result = $activ->activ($uid, $status);
+            var_dump($result);
             if ($result){
                 $this->request->redirect($referrer);
             }
