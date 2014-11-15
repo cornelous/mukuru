@@ -18,6 +18,7 @@ class Controller_Welcome extends Controller_Application {
             ->bind('users', $users)
             ->bind('pager_links', $pager_links);
 
+        var_dump($users);
         $user = new Model_User;
         $user_count = $user->count_all();
 
