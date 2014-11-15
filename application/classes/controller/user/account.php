@@ -291,6 +291,7 @@ class Controller_User_Account extends Controller_Application {
         }
 
         $referrer = Request::$referrer;
+        var_dump($_GET);
         if ($_GET){
             $uid = $_GET['uid'];
             $status = $_GET['status'];
