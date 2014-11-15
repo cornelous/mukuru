@@ -41,8 +41,8 @@ class Model_User {
         ->from($this->_table)
         ->limit($limit)
         ->offset($offset)
-         ->join('countries', 'LEFT INNER')
-         ->on('users.country', '=', 'countries.id')
+        // ->join('countries', 'LEFT INNER')
+        // ->on('users.country', '=', 'countries.id')
         ->execute()
         ->as_array();
     }
