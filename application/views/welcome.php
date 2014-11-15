@@ -12,7 +12,7 @@
         <th>Verified</th>
         <th>Actions</th>
     </tr>
-    <?php $count = 0;?>
+    <?php var_dump($user); $count = 0;?>
     <?php foreach ($users as $user) : ?>
     <?php if ($count %2 == 0): ?>
     <tr>
